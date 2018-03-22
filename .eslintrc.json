@@ -1,0 +1,15 @@
+{
+    "extends": "airbnb-base",
+    "env": {
+        "browser": true
+    },
+    "rules": {
+        "import/no-extraneous-dependencies": "off",
+        "max-len": "off",
+        "no-plusplus": "off",
+        "no-restricted-globals": "off",
+        "no-use-before-define": "off",
+        "padded-blocks": ["error", "always"],
+        "prefer-destructuring": "off"
+    }
+}

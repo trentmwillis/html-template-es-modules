@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>HTML Template ES Modules</title>
+
+  <style>
+    /* Center content on the page */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+  </style>
+
+  <script>
+    navigator.serviceWorker.register('./sw.js');
+  </script>
+</head>
+<body>
+
+  <hello-world></hello-world>
+  <script type="module" src="./hello-world.js"></script>
+
+</body>
+</html>
