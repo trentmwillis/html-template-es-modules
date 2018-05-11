@@ -19,3 +19,13 @@ console.log(template.toString()); // [object HTMLTemplateElement]
 ```
 
 From there you can clone then template and insert it into the DOM! Or do whatever else you'd like with the element.
+
+## Running The Demo
+
+To try out the demo, do the following:
+
+* Clone the repo: `git clone https://github.com/trentmwillis/html-template-es-modules.git`
+* Install dependencies in the repo: `cd html-template-es-modules && npm install`
+* Run the server: `npm run start`
+
+_Note: You may need to refresh the page once to get the Service Worker to properly kick-in._
