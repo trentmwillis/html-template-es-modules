@@ -10,17 +10,16 @@ self.addEventListener('fetch', (event) => {
 
 function isTemplateRequest(request) {
 
-  const pathParts = request.url.split('.').reverse();
-  return `${pathParts[1]}.${pathParts[0]}` === 't.html';
+  return request.url.endsWith('.t.html');
 
 }
 
 async function esModuleFromTemplateRequest(request) {
 
-  const response = await fetch(request);
-  const markup = await response.text();
+  const response = await fetch(request); // Fetch the original data
+  const markup = await response.text(); // Get the raw markup as text
   const esModule = insertMarkupIntoESModule(markup);
-  const responseOptions = {
+  const responseOptions = { // Return the new "module" as the appropriate type
     headers: {
       'Content-Type': 'application/javascript',
     },

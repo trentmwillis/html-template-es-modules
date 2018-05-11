@@ -2,6 +2,7 @@
  * This is a simple server for use in development. It is NOT used in production.
  */
 
+const opn = require('opn');
 const ora = require('ora');
 const startServer = require('./start');
 
@@ -25,8 +26,9 @@ startServer(port).then(() => {
   /* eslint-disable no-console */
   console.log();
   console.info(`${colorize(blue, 'ℹ')} View the ${colorize(blue, 'application')} at ${colorize(green, `http://localhost:${port}`)}`);
-  console.info(`${colorize(blue, 'ℹ')} View the ${colorize(blue, 'test suite')} at ${colorize(green, `http://localhost:${port}/tests`)}`);
   console.log();
   /* eslint-enable no-console */
+
+  opn(`http://localhost:${port}`);
 
 });
