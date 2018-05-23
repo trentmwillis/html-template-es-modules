@@ -1,3 +1,6 @@
+// Call clients.claim so that we intercept requests even on initial page load.
+self.addEventListener('activate', () => self.clients.claim());
+
 self.addEventListener('fetch', (event) => {
 
   if (isTemplateRequest(event.request)) {
@@ -10,7 +13,7 @@ self.addEventListener('fetch', (event) => {
 
 function isTemplateRequest(request) {
 
-  return request.url.endsWith('.t.html');
+  return request.url.endsWith('.html') && request.destination === 'script';
 
 }
 

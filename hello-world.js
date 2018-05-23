@@ -1,4 +1,4 @@
-import template from './hello-world.t.html';
+import template from './hello-world.html';
 
 class HelloWorldElement extends HTMLElement {
 
